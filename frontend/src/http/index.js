@@ -37,7 +37,7 @@ api.interceptors.response.use(
             try
             {
                 await axios.get(
-                    `${process.env.REACT_APP_API_URL}/api/refresh`,
+                    `https://ch-server-trs.onrender.com/api/refresh`,
                     {
                         withCredentials: true,
                     }

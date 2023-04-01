@@ -12,7 +12,7 @@ const server = require('http').createServer(app);  // for socket
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: 'https://codershouse-trs.netlify.app',
+        origin: true,
         methods: ['GET', 'POST'],
     }
 })
