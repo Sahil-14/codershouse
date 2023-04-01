@@ -94,11 +94,15 @@ class AuthController {
 
         // attach refreshToken to cookie
         res.cookie('refreshToken', refreshToken, {
+            domain: 'https://ch-server-trs.onrender.com',
+            path: '/',
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true
         });
 
         res.cookie('accessToken', accessToken, {
+            domain: 'https://ch-server-trs.onrender.com',
+            path: '/',
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true
         });
@@ -161,11 +165,15 @@ class AuthController {
 
         // put them in cookie
         res.cookie('refreshToken', refreshToken, {
+            domain: 'https://ch-server-trs.onrender.com',
+            path: '/',
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true
         });
 
         res.cookie('accessToken', accessToken, {
+            domain: 'https://ch-server-trs.onrender.com',
+            path: '/',
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true
         });
