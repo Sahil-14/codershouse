@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-    withCredentials:true ,
+    baseURL: "https://ch-server-trs.onrender.com",
+    withCredentials: true,
     headers: {
         'Content-type': 'application/json',
         Accept: 'application/json',
@@ -11,11 +11,11 @@ const api = axios.create({
 
 
 // list of all the endpoinsts
-export const sendOtp   = (data) => api.post('/api/send-otp', data);
-export const verifyOtp = (data) => api.post('/api/verify-otp',data);
-export const activate  = (data) => api.post('/api/activate',data);
+export const sendOtp = (data) => api.post('/api/send-otp', data);
+export const verifyOtp = (data) => api.post('/api/verify-otp', data);
+export const activate = (data) => api.post('/api/activate', data);
 export const logout = () => api.post('/api/logout');
-export const createRoom = (data) => api.post('/api/rooms',data);
+export const createRoom = (data) => api.post('/api/rooms', data);
 export const getAllRooms = () => api.get('/api/rooms');
 export const getRoom = (roomId) => api.get(`/api/rooms/${roomId}`);
 
@@ -31,9 +31,11 @@ api.interceptors.response.use(
             error.response.status === 401 &&
             originalRequest &&
             !originalRequest._isRetry
-        ) {
+        )
+        {
             originalRequest.isRetry = true;
-            try {
+            try
+            {
                 await axios.get(
                     `${process.env.REACT_APP_API_URL}/api/refresh`,
                     {
@@ -42,7 +44,8 @@ api.interceptors.response.use(
                 );
 
                 return api.request(originalRequest);
-            } catch (err) {
+            } catch (err)
+            {
                 console.log(err.message);
             }
         }
