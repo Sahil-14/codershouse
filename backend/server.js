@@ -12,7 +12,7 @@ const server = require('http').createServer(app);  // for socket
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: "*",
+        origin: 'https://codershouse-trs.netlify.app/',
         methods: ['GET', 'POST'],
     }
 })
@@ -20,7 +20,7 @@ const io = require('socket.io')(server, {
 app.use(cookieParser());
 const corsOption = {
     credentials: true,
-    origin: "*",
+    origin: ['https://codershouse-trs.netlify.app/'],
 
 }
 app.use(cors(corsOption));
