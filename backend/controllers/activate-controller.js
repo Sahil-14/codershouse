@@ -36,7 +36,6 @@ class ActivateController{
             console.log('crashing while updating image')
             res.status(500).json({ message: 'Could not process the image' });
         }
-
         const userId = req.user._id;
         try{
            
