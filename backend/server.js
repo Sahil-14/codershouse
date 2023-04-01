@@ -16,13 +16,13 @@ const io = require('socket.io')(server, {
         methods: ['GET', 'POST'],
     }
 })
-
-app.use(cookieParser());
 const corsOption = {
     credentials: true,
     origin: true,
 }
+
 app.use(cors(corsOption));
+app.use(cookieParser());
 app.use('/storage', express.static('storage'));
 
 const PORT = process.env.PORT || 5500;

@@ -95,12 +95,12 @@ class AuthController {
         // attach refreshToken to cookie
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: false
+            httpOnly: true
         });
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: false
+            httpOnly: true
         });
         console.log("cookie setting completed")
 
@@ -162,12 +162,12 @@ class AuthController {
         // put them in cookie
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: false
+            httpOnly: true
         });
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: false
+            httpOnly: true
         });
 
         // transform user before sending it  
