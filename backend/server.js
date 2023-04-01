@@ -18,11 +18,11 @@ const io = require('socket.io')(server, {
 })
 
 app.use(cookieParser());
-// const corsOption = {
-//     credentials: true,
-//     origin: "https://codershouse-trs.netlify.app",
-// }
-app.use(cors({ credentials: true }));
+const corsOption = {
+    credentials: true,
+    origin: true,
+}
+app.use(cors(corsOption));
 app.use('/storage', express.static('storage'));
 
 const PORT = process.env.PORT || 5500;
